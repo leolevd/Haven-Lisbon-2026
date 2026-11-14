@@ -6,10 +6,17 @@ extends CharacterBody2D
 @export var JUMP_VELOCITY = -300.0
 var money = 0
 var jumping = false
+var wobbling = false
 
 
-
-
+func wobble():
+	wobbling = true
+	animated_sprite_2d.material = ShaderMaterial.new()
+	animated_sprite_2d.material.shader = preload("res://wobbly.gdshader")
+	animated_sprite_2d.material.set_shader_parameter("sway_intensivity", 1)
+	animated_sprite_2d.material.set_shader_parameter("sway_speed", 10)
+func unwobble():
+	animated_sprite_2d.material = null
 func _physics_process(delta: float) -> void:
 	label_2.text = str(money)
 	# Add the gravity.
@@ -17,6 +24,9 @@ func _physics_process(delta: float) -> void:
 		velocity += Vector2(0, GRAVITY) * delta
 	else:
 		jumping = false
+		if wobbling:
+			unwobble()
+			wobbling = false
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		jumping = true
