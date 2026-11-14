@@ -15,7 +15,8 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += Vector2(0, GRAVITY) * delta
-
+	else:
+		jumping = false
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		jumping = true

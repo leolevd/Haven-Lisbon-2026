@@ -122,7 +122,7 @@ shape = SubResource("CircleShape2D_2hs0m")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1709170151]
 z_index = 100
-zoom = Vector2(11, 11)
+zoom = Vector2(7, 7)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=516425675]
 
