@@ -36,8 +36,17 @@ func _physics_process(delta: float) -> void:
 		if wobbling:
 			unwobble()
 			wobbling = false
+			
+	# Handle dash down.
+	dash_timer -= delta
+	if Input.is_action_just_pressed("dash_down") and not is_on_floor() and not is_on_wall() and not is_on_ceiling() and dash_timer <= 0:
+		velocity.y = DASH_SPEED
+		dash_timer = DASH_RELOAD
+		animated_sprite_2d.global_rotation_degrees = 0
+			
+			
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		jumping = true
 		animated_sprite_2d.play("jumping")
 		animated_sprite_2d.global_rotation_degrees = 0
