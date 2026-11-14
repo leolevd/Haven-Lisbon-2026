@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bx6b0gl20gro0"]
+
+[ext_resource type="Texture2D" uid="uid://bhy5ofldkns1w" path="res://haven-haystack.png" id="1_65j4t"]
+[ext_resource type="Texture2D" uid="uid://bdvuwm2wssp4d" path="res://haven-hay-particle.png" id="2_s5l1k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsws6"]
+size = Vector2(20, 3.5)
+
+[node name="haystack" type="StaticBody2D" unique_id=1423423823]
+z_index = 300
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1338760602]
+texture = ExtResource("1_65j4t")
+hframes = 7
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1043640047]
+amount = 16
+texture = ExtResource("2_s5l1k")
+lifetime = 10.0
+emission_shape = 3
+emission_rect_extents = Vector2(30, 25)
+direction = Vector2(0, 1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 2.0
+initial_velocity_max = 2.0
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_min = 0.2
+scale_amount_max = 0.2
+hue_variation_min = 0.1
+hue_variation_max = 0.1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1973126410]
+polygon = PackedVector2Array(-24, 32, -14, 10, -2, -6, 6, 6, 14, 14, 20, 21, 23, 31)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1887062824]
+position = Vector2(-12.5, 19.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1357609552]
+shape = SubResource("RectangleShape2D_tsws6")
+one_way_collision = true
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=622066701]
+position = Vector2(-7.5, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=778048284]
+shape = SubResource("RectangleShape2D_tsws6")
+one_way_collision = true
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1004998105]
+position = Vector2(-3.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=2023177992]
+shape = SubResource("RectangleShape2D_tsws6")
+one_way_collision = true
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=1526036907]
+position = Vector2(15.5, 17.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=1748301584]
+shape = SubResource("RectangleShape2D_tsws6")
+one_way_collision = true
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=1247724652]
+position = Vector2(6.5, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=2121487748]
+shape = SubResource("RectangleShape2D_tsws6")
+one_way_collision = true

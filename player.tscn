@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dw3yq0ji1nc7p" path="res://player.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://cx1bpmqwlpeqh" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://c8wnbv1seoiqr" path="res://haven-maneyyyy.png" id="3_i3pqv"]
+[ext_resource type="Shader" uid="uid://b8ovytp1gecjr" path="res://wobbly.gdshader" id="4_sweqy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
 atlas = ExtResource("1_4flbx")
@@ -73,7 +75,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"jumping",
-"speed": 5.0
+"speed": 100.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -85,14 +87,34 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2hs0m"]
-radius = 8.0
+radius = 7.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_onrkg"]
+font_size = 44
+font_color = Color(0, 0, 0, 1)
+outline_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_tsws6"]
+font_size = 44
+font_color = Color(0, 0, 0, 1)
+outline_size = 10
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tsws6"]
+shader = ExtResource("4_sweqy")
+shader_parameter/saturation = 0.6
+shader_parameter/lift_shadows = 0.0
+shader_parameter/brightness = 1.00000002375
+shader_parameter/pastel_tint = Color(1, 0.95, 0.92, 1)
+shader_parameter/enable_sway = true
+shader_parameter/sway_speed = 3.25900015154262
+shader_parameter/sway_intensity = 0.05000000074506
 
 [node name="player" type="CharacterBody2D" unique_id=1069588700]
 script = ExtResource("1_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=895586922]
 sprite_frames = SubResource("SpriteFrames_tsws6")
-animation = &"idle"
+animation = &"jumping"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=736607411]
@@ -101,3 +123,36 @@ shape = SubResource("CircleShape2D_2hs0m")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1709170151]
 z_index = 100
 zoom = Vector2(11, 11)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=516425675]
+
+[node name="HUD" type="Control" parent="CanvasLayer" unique_id=6077218]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer/HUD" unique_id=620511124]
+layout_mode = 0
+offset_left = 827.0
+offset_top = 12.0
+offset_right = 1115.0
+offset_bottom = 135.0
+text = "MONEY:"
+label_settings = SubResource("LabelSettings_onrkg")
+
+[node name="Label2" type="Label" parent="CanvasLayer/HUD" unique_id=449941196]
+layout_mode = 0
+offset_left = 1005.0
+offset_top = 12.0
+offset_right = 1151.0
+offset_bottom = 191.0
+text = "0
+"
+label_settings = SubResource("LabelSettings_tsws6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/HUD" unique_id=893146581]
+material = SubResource("ShaderMaterial_tsws6")
+position = Vector2(780, 37)
+scale = Vector2(2.125, 2.125)
+texture = ExtResource("3_i3pqv")
