@@ -3,4 +3,4 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "player":
-		body.velocity.y = -500
+		body.velocity.y = -600

@@ -6,13 +6,9 @@ extends CharacterBody2D
 @export var JUMP_VELOCITY = -300.0
 var money = 0
 var jumping = false
-func jump():
-	if jumping and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-	jumping = false
 
-func _ready() -> void:
-	animated_sprite_2d.animation_finished.connect(jump)
+
+
 
 func _physics_process(delta: float) -> void:
 	label_2.text = str(money)
@@ -25,6 +21,7 @@ func _physics_process(delta: float) -> void:
 		jumping = true
 		animated_sprite_2d.play("jumping")
 		animated_sprite_2d.global_rotation_degrees = 0
+		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
