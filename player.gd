@@ -1,19 +1,21 @@
 extends CharacterBody2D
 
 # Useful things
-@onready var label_2: Label = $CanvasLayer/HUD/Label2
+@onready var everything_else: Control = $CanvasLayer/HUD/Everything_else
+@onready var label_2: Label = $CanvasLayer/HUD/Money/Label2
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @export var GRAVITY = 980.0
 @export var SPEED = 200.0
 @export var JUMP_VELOCITY = -300.0
 @export var DASH_RELOAD = 0.6
 @export var DASH_SPEED = 600.0
-
-
+@export var haystack: Node2D
+var jump_boosts = 0
+var speed_boosts = 0
 var dash_timer = 0.0
 var jumping = false
 var wobbling = false
-
+var needles = 0
 var money = 0
 
 
@@ -28,6 +30,14 @@ func unwobble():
 	animated_sprite_2d.material = null
 func _physics_process(delta: float) -> void:
 	label_2.text = str(money)
+	if Input.is_action_pressed("showstats"):
+		everything_else.visible = true
+	else:
+		everything_else.visible = false
+	$CanvasLayer/HUD/Everything_else/workers/Label2.text = str(haystack.clonesthere)
+	$CanvasLayer/HUD/Everything_else/jump_boosts/Label2.text = str(jump_boosts)
+	$CanvasLayer/HUD/Everything_else/speed_boosts/Label2.text = str(speed_boosts)
+	$CanvasLayer/HUD/Everything_else/needles/Label2.text = str(needles)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += Vector2(0, GRAVITY) * delta

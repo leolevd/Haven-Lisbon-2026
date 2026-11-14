@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://cx1bpmqwlpeqh" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://c8wnbv1seoiqr" path="res://haven-maneyyyy.png" id="3_i3pqv"]
 [ext_resource type="Shader" uid="uid://b8ovytp1gecjr" path="res://wobbly.gdshader" id="4_sweqy"]
+[ext_resource type="Texture2D" uid="uid://cqxt8oegr8dsa" path="res://haven-needle.png" id="5_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://b8ui3xqrdqe2s" path="res://have-lilhelper.png" id="5_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://orwwrgftkr1" path="res://haven-upgrade-types.png" id="6_1jxqw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
 atlas = ExtResource("1_4flbx")
@@ -129,10 +132,16 @@ zoom = Vector2(7, 7)
 [node name="HUD" type="Control" parent="CanvasLayer" unique_id=6077218]
 layout_mode = 3
 anchors_preset = 0
+offset_left = 80.0
+offset_right = 120.0
+offset_bottom = 40.0
+
+[node name="Money" type="Control" parent="CanvasLayer/HUD" unique_id=493815659]
+anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="CanvasLayer/HUD" unique_id=620511124]
+[node name="Label" type="Label" parent="CanvasLayer/HUD/Money" unique_id=620511124]
 layout_mode = 0
 offset_left = 827.0
 offset_top = 12.0
@@ -141,7 +150,7 @@ offset_bottom = 135.0
 text = "MONEY:"
 label_settings = SubResource("LabelSettings_onrkg")
 
-[node name="Label2" type="Label" parent="CanvasLayer/HUD" unique_id=449941196]
+[node name="Label2" type="Label" parent="CanvasLayer/HUD/Money" unique_id=449941196]
 layout_mode = 0
 offset_left = 1005.0
 offset_top = 12.0
@@ -151,8 +160,175 @@ text = "0
 "
 label_settings = SubResource("LabelSettings_tsws6")
 
-[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/HUD" unique_id=893146581]
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/HUD/Money" unique_id=893146581]
 material = SubResource("ShaderMaterial_tsws6")
 position = Vector2(780, 37)
 scale = Vector2(2.125, 2.125)
 texture = ExtResource("3_i3pqv")
+
+[node name="Everything_else" type="Control" parent="CanvasLayer/HUD" unique_id=2112699374]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="needles" type="Control" parent="CanvasLayer/HUD/Everything_else" unique_id=769927290]
+anchors_preset = 0
+offset_top = 56.0
+offset_right = 40.0
+offset_bottom = 96.0
+
+[node name="Label" type="Label" parent="CanvasLayer/HUD/Everything_else/needles" unique_id=550497405]
+layout_mode = 0
+offset_left = 802.0
+offset_top = 12.0
+offset_right = 1090.0
+offset_bottom = 135.0
+text = "NEEDLES:"
+label_settings = SubResource("LabelSettings_onrkg")
+
+[node name="Label2" type="Label" parent="CanvasLayer/HUD/Everything_else/needles" unique_id=2013672122]
+layout_mode = 0
+offset_left = 1005.0
+offset_top = 12.0
+offset_right = 1151.0
+offset_bottom = 191.0
+text = "0
+"
+label_settings = SubResource("LabelSettings_tsws6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/HUD/Everything_else/needles" unique_id=1171019867]
+material = SubResource("ShaderMaterial_tsws6")
+position = Vector2(758, 37.999992)
+scale = Vector2(3.125001, 3.125001)
+texture = ExtResource("5_1jxqw")
+
+[node name="workers" type="Control" parent="CanvasLayer/HUD/Everything_else" unique_id=814713987]
+anchors_preset = 0
+offset_top = 120.0
+offset_right = 40.0
+offset_bottom = 160.0
+
+[node name="Label" type="Label" parent="CanvasLayer/HUD/Everything_else/workers" unique_id=444592356]
+layout_mode = 0
+offset_left = 779.0
+offset_top = 12.0
+offset_right = 1067.0
+offset_bottom = 135.0
+text = "WORKERS:"
+label_settings = SubResource("LabelSettings_onrkg")
+
+[node name="Label2" type="Label" parent="CanvasLayer/HUD/Everything_else/workers" unique_id=929871833]
+layout_mode = 0
+offset_left = 1005.0
+offset_top = 12.0
+offset_right = 1151.0
+offset_bottom = 191.0
+text = "0
+"
+label_settings = SubResource("LabelSettings_tsws6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/HUD/Everything_else/workers" unique_id=1291390819]
+material = SubResource("ShaderMaterial_tsws6")
+position = Vector2(740, 37.000008)
+scale = Vector2(2.125, 2.125)
+texture = ExtResource("5_2hs0m")
+
+[node name="jump_boosts" type="Control" parent="CanvasLayer/HUD/Everything_else" unique_id=870358258]
+anchors_preset = 0
+offset_top = 184.0
+offset_right = 40.0
+offset_bottom = 224.0
+
+[node name="Label" type="Label" parent="CanvasLayer/HUD/Everything_else/jump_boosts" unique_id=187538255]
+layout_mode = 0
+offset_left = 699.0
+offset_top = 12.0
+offset_right = 1007.0
+offset_bottom = 135.0
+text = "JUMP BOOSTS:"
+label_settings = SubResource("LabelSettings_onrkg")
+
+[node name="Label2" type="Label" parent="CanvasLayer/HUD/Everything_else/jump_boosts" unique_id=995039451]
+layout_mode = 0
+offset_left = 1005.0
+offset_top = 12.0
+offset_right = 1151.0
+offset_bottom = 191.0
+text = "0
+"
+label_settings = SubResource("LabelSettings_tsws6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/HUD/Everything_else/jump_boosts" unique_id=1121163721]
+material = SubResource("ShaderMaterial_tsws6")
+position = Vector2(634, 67)
+scale = Vector2(5.9999995, 5.9999995)
+texture = ExtResource("6_1jxqw")
+hframes = 4
+frame = 1
+
+[node name="speed_boosts" type="Control" parent="CanvasLayer/HUD/Everything_else" unique_id=1980706541]
+anchors_preset = 0
+offset_top = 248.0
+offset_right = 40.0
+offset_bottom = 288.0
+
+[node name="Label" type="Label" parent="CanvasLayer/HUD/Everything_else/speed_boosts" unique_id=891031531]
+layout_mode = 0
+offset_left = 675.0
+offset_top = 12.0
+offset_right = 1003.0
+offset_bottom = 135.0
+text = "SPEED BOOSTS:"
+label_settings = SubResource("LabelSettings_onrkg")
+
+[node name="Label2" type="Label" parent="CanvasLayer/HUD/Everything_else/speed_boosts" unique_id=606680710]
+layout_mode = 0
+offset_left = 1005.0
+offset_top = 12.0
+offset_right = 1151.0
+offset_bottom = 191.0
+text = "0
+"
+label_settings = SubResource("LabelSettings_tsws6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/HUD/Everything_else/speed_boosts" unique_id=1829168514]
+material = SubResource("ShaderMaterial_tsws6")
+position = Vector2(602, 70.99999)
+scale = Vector2(5.3125, 5.3125)
+texture = ExtResource("6_1jxqw")
+hframes = 4
+frame = 2
+
+[node name="strength_boosts" type="Control" parent="CanvasLayer/HUD/Everything_else" unique_id=1669621731]
+anchors_preset = 0
+offset_top = 304.0
+offset_right = 40.0
+offset_bottom = 344.0
+
+[node name="Label" type="Label" parent="CanvasLayer/HUD/Everything_else/strength_boosts" unique_id=1582812049]
+layout_mode = 0
+offset_left = 757.0
+offset_top = 12.0
+offset_right = 1000.0
+offset_bottom = 135.0
+text = "STRENGTH:"
+label_settings = SubResource("LabelSettings_onrkg")
+
+[node name="Label2" type="Label" parent="CanvasLayer/HUD/Everything_else/strength_boosts" unique_id=831776684]
+layout_mode = 0
+offset_left = 1005.0
+offset_top = 12.0
+offset_right = 1151.0
+offset_bottom = 191.0
+text = "0
+"
+label_settings = SubResource("LabelSettings_tsws6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/HUD/Everything_else/strength_boosts" unique_id=1180458110]
+material = SubResource("ShaderMaterial_tsws6")
+position = Vector2(698, 71)
+scale = Vector2(5.3125, 5.3125)
+texture = ExtResource("6_1jxqw")
+hframes = 4
+frame = 3

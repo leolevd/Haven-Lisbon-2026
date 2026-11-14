@@ -13,7 +13,7 @@ func _physics_process(delta: float) -> void:
 		timer += delta
 	else:
 		timer = 0
-		hayleft -= clonesthere * strength
+		hayleft -= clonesthere * strength / 2
 	
 	var state = max((6 if hayleft <= 0 else ((hayleft / (500/7)) - 6) * -1), 0)
 	$Sprite2D.frame = state

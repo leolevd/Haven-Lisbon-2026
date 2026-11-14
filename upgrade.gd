@@ -21,15 +21,17 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 						haystack.createclone()
 						cost_clones += 3
 			1:
-				if body.money >= cost_jump:
-					body.JUMP_VELOCITY -= 30
+				if body.money >= cost_jump and body.jump_boosts < 2:
+					body.JUMP_VELOCITY -= 15
 					body.money -= cost_jump
+					body.jump_boosts += 1
 					cost_jump += 2
 				
 			2:
-				if body.money >= cost_speed:
-					body.SPEED += 40
+				if body.money >= cost_speed and body.speed_boosts < 2:
+					body.SPEED += 20
 					body.money -= cost_speed
+					body.speed_boosts += 1
 					cost_speed += 2
 			3:
 				if body.money >= cost_strength:
