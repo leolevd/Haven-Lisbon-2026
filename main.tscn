@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://b184iw7dk838s"]
 
-[ext_resource type="Texture2D" uid="uid://v13cgw80avr5" path="res://haven-bg1.png" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://d3gpvofp4p323" path="res://haven-bg1.png" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://hnmaw5r5n74e" path="res://haven-bg2.png" id="2_h2yge"]
 [ext_resource type="Texture2D" uid="uid://b63haoocdfspj" path="res://haven-bg3.png" id="3_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://6pc1cx8o2h06" path="res://haven-bg6.png" id="4_1bvp3"]
