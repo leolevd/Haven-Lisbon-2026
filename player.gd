@@ -12,34 +12,32 @@ extends CharacterBody2D
 
 var dash_timer = 0.0
 var jumping = false
+var wobbling = false
 
 var money = 0
 
 
 
-
-
+func wobble():
+	wobbling = true
+	animated_sprite_2d.material = ShaderMaterial.new()
+	animated_sprite_2d.material.shader = preload("res://wobbly.gdshader")
+	animated_sprite_2d.material.set_shader_parameter("sway_intensivity", 1)
+	animated_sprite_2d.material.set_shader_parameter("sway_speed", 10)
+func unwobble():
+	animated_sprite_2d.material = null
 func _physics_process(delta: float) -> void:
 	label_2.text = str(money)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += Vector2(0, GRAVITY) * delta
-		
-	if is_on_floor():
-			jumping = false
 	else:
-		jumping = true
-			
-		
-		# Handle dash down.
-	dash_timer -= delta
-	if Input.is_action_just_pressed("dash_down") and not is_on_floor() and not is_on_wall() and not is_on_ceiling() and dash_timer <= 0:
-		velocity.y = DASH_SPEED
-		dash_timer = DASH_RELOAD
-		animated_sprite_2d.global_rotation_degrees = 0
-
-	# H# handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+		jumping = false
+		if wobbling:
+			unwobble()
+			wobbling = false
+	# Handle jump.
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		jumping = true
 		animated_sprite_2d.play("jumping")
 		animated_sprite_2d.global_rotation_degrees = 0
