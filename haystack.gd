@@ -1,4 +1,5 @@
 extends StaticBody2D
+@export var player: CharacterBody2D
 const LILHELPER = preload("res://lilhelper.tscn")
 var hayleft = 500
 var clonesthere = 0
@@ -14,6 +15,9 @@ func _physics_process(delta: float) -> void:
 	else:
 		timer = 0
 		hayleft -= clonesthere * strength / 2
+		if randi_range(0, 50 - (clonesthere*2*strength)) == 1 and clonesthere >= 1:
+			player.money += 10
+			player.needles += 1
 	
 	var state = max((6 if hayleft <= 0 else ((hayleft / (500/7)) - 6) * -1), 0)
 	$Sprite2D.frame = state
