@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c7btxdxh8yn0q"]
+
+[ext_resource type="Script" uid="uid://cmmkkts7uxyi5" path="res://bounceback.gd" id="1_33027"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tsws6"]
+
+[node name="bounceback" type="Area2D" unique_id=278846895]
+script = ExtResource("1_33027")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=350634366]
+shape = SubResource("WorldBoundaryShape2D_tsws6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
