@@ -7,9 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://dmi73yl7dw8uf" path="res://player.tscn" id="5_lquwl"]
 [ext_resource type="Script" uid="uid://ciupw3hthatoa" path="res://background.gd" id="6_background"]
 [ext_resource type="Texture2D" uid="uid://uxjhwy3i547t" path="res://tileset.png" id="7_272bh"]
+[ext_resource type="Texture2D" uid="uid://271mcwlxrrhi" path="res://haven-bruh.png" id="7_dg77c"]
 [ext_resource type="PackedScene" uid="uid://c7btxdxh8yn0q" path="res://bounceback.tscn" id="8_5vw27"]
 [ext_resource type="PackedScene" uid="uid://dml2cjtve507a" path="res://coin.tscn" id="9_4c57u"]
 [ext_resource type="PackedScene" uid="uid://bx6b0gl20gro0" path="res://haystack.tscn" id="9_kek77"]
+[ext_resource type="PackedScene" uid="uid://cciroq7ghg4ay" path="res://upgrade.tscn" id="11_efxa6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vw27"]
 texture = ExtResource("7_272bh")
@@ -116,6 +118,7 @@ sources/0 = SubResource("TileSetAtlasSource_5vw27")
 
 [node name="player" parent="." unique_id=1069588700 instance=ExtResource("5_lquwl")]
 z_index = 100
+position = Vector2(-98, 0)
 
 [node name="ParallaxBG" type="Node2D" parent="." unique_id=1156140690]
 z_index = -400
@@ -146,7 +149,8 @@ texture = ExtResource("2_h2yge")
 
 [node name="Parallax2D3" type="Parallax2D" parent="ParallaxBG" unique_id=891106381]
 z_index = 1
-scroll_scale = Vector2(0.005, 0)
+scroll_scale = Vector2(0.1, 0.5)
+scroll_offset = Vector2(0, 10)
 repeat_size = Vector2(100, 0)
 autoscroll = Vector2(-1, 0)
 repeat_times = 3
@@ -168,6 +172,20 @@ ignore_camera_scroll = true
 scale = Vector2(1.67, 1.56)
 texture = ExtResource("4_1bvp3")
 
+[node name="Parallax2D5" type="Parallax2D" parent="ParallaxBG" unique_id=1428633523]
+z_index = -1
+scroll_scale = Vector2(0, -0.5)
+repeat_size = Vector2(167, 0)
+repeat_times = 100
+follow_viewport = false
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBG/Parallax2D5" unique_id=1553582142]
+z_index = 1
+position = Vector2(0.5000057, 114)
+scale = Vector2(1.6718751, 2.4687498)
+texture = ExtResource("7_dg77c")
+
 [node name="bounceback" parent="." unique_id=278846895 instance=ExtResource("8_5vw27")]
 position = Vector2(-3, 120)
 
@@ -182,15 +200,6 @@ tile_set = SubResource("TileSet_7mycd")
 position = Vector2(-272, -32)
 
 [node name="maney" type="Node" parent="." unique_id=1224474967]
-
-[node name="coin" parent="maney" unique_id=175693411 instance=ExtResource("9_4c57u")]
-position = Vector2(-184, 26)
-
-[node name="coin2" parent="maney" unique_id=2023820539 instance=ExtResource("9_4c57u")]
-position = Vector2(-133, 26)
-
-[node name="coin3" parent="maney" unique_id=35322927 instance=ExtResource("9_4c57u")]
-position = Vector2(-71, 27)
 
 [node name="coin4" parent="maney" unique_id=1107275368 instance=ExtResource("9_4c57u")]
 position = Vector2(175, 11)
@@ -239,3 +248,15 @@ position = Vector2(1034, -108)
 
 [node name="coin19" parent="maney" unique_id=341892676 instance=ExtResource("9_4c57u")]
 position = Vector2(1039, -106)
+
+[node name="upgrade" parent="." unique_id=364805235 instance=ExtResource("11_efxa6")]
+position = Vector2(-70, 6)
+type = 2
+
+[node name="upgrade2" parent="." unique_id=1756966667 instance=ExtResource("11_efxa6")]
+position = Vector2(-46, 6)
+type = 1
+
+[node name="upgrade3" parent="." unique_id=862448660 node_paths=PackedStringArray("haystack") instance=ExtResource("11_efxa6")]
+position = Vector2(-23, 6)
+haystack = NodePath("../haystack")
