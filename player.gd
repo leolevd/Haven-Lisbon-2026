@@ -38,6 +38,7 @@ func _physics_process(delta: float) -> void:
 	$CanvasLayer/HUD/Everything_else/jump_boosts/Label2.text = str(jump_boosts)
 	$CanvasLayer/HUD/Everything_else/speed_boosts/Label2.text = str(speed_boosts)
 	$CanvasLayer/HUD/Everything_else/needles/Label2.text = str(needles)
+	$CanvasLayer/HUD/Everything_else/strength_boosts/Label2.text = str(haystack.strength)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += Vector2(0, GRAVITY) * delta
