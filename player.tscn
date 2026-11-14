@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dmi73yl7dw8uf"]
+
+[ext_resource type="Texture2D" uid="uid://dw3yq0ji1nc7p" path="res://player.png" id="1_4flbx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
+atlas = ExtResource("1_4flbx")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3pqv"]
+atlas = ExtResource("1_4flbx")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqtel"]
+atlas = ExtResource("1_4flbx")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tsws6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onrkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3pqv")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"jumping",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqtel")
+}],
+"loop": 1,
+"name": &"rolling",
+"speed": 5.0
+}]
+
+[node name="player" type="CharacterBody2D" unique_id=1069588700]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=736607411]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=895586922]
+sprite_frames = SubResource("SpriteFrames_tsws6")
+animation = &"idle"
+autoplay = "idle"

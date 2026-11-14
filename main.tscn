@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://b184iw7dk838s"]
+
+[ext_resource type="Texture2D" uid="uid://v13cgw80avr5" path="res://haven-bg1.png" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://hnmaw5r5n74e" path="res://haven-bg2.png" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://b63haoocdfspj" path="res://haven-bg3.png" id="3_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://6pc1cx8o2h06" path="res://haven-bg6.png" id="4_1bvp3"]
+
+[node name="main" type="Node2D" unique_id=1024408130]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1633578475]
+scroll_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=2142616936]
+texture = ExtResource("1_ig7tw")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1311923137]
+repeat_size = Vector2(100, 0)
+autoscroll = Vector2(-2, 0)
+repeat_times = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=1039722688]
+texture = ExtResource("2_h2yge")
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=1280960571]
+scroll_scale = Vector2(-5, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" unique_id=1829266685]
+texture = ExtResource("3_1bvp3")
+
+[node name="Parallax2D4" type="Parallax2D" parent="." unique_id=1648570847]
+scroll_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D4" unique_id=632387470]
+texture = ExtResource("4_1bvp3")
