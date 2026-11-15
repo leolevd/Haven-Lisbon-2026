@@ -205,6 +205,26 @@ value = 1.0
 script = ExtResource("5_jcgpk")
 audio_bus_name = "Music"
 
+[node name="AudioControl2" type="HSlider" parent="Options" unique_id=719702454]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.2850001
+anchor_top = 0.5
+anchor_right = 1.2850001
+anchor_bottom = 0.5
+offset_left = -544.395
+offset_top = -64.5
+offset_right = -195.39502
+offset_bottom = 2.5
+theme_override_styles/slider = SubResource("StyleBoxLine_ifeun")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_1x3kl")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_1x3kl")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("5_jcgpk")
+audio_bus_name = "Music"
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=691615075]
 stream = ExtResource("5_ionwk")
 
@@ -218,3 +238,4 @@ bus = &"Music"
 [connection signal="pressed" from="Main_Buttons/Button_Quit" to="." method="_on_button_quit_pressed"]
 [connection signal="pressed" from="Options/Settings_exit" to="." method="_on_settings_exit_pressed"]
 [connection signal="value_changed" from="Options/AudioControl" to="Options/AudioControl" method="_on_value_changed"]
+[connection signal="value_changed" from="Options/AudioControl2" to="Options/AudioControl2" method="_on_value_changed"]
