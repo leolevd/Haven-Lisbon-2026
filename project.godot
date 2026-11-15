@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Haven Lisbon"
-run/main_scene="uid://b184iw7dk838s"
+run/main_scene="uid://bk0ainhrhrb0s"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
