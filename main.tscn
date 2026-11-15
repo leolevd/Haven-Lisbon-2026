@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://byyk3h0aayo2i" path="res://secret_entrance.gd" id="10_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://cciroq7ghg4ay" path="res://upgrade.tscn" id="11_efxa6"]
 [ext_resource type="Script" uid="uid://2p0icfc5w8b0" path="res://secret.gd" id="13_w48qg"]
+[ext_resource type="AudioStream" uid="uid://cwtx563c1ht3n" path="res://music.mp3" id="15_vivmo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vw27"]
 texture = ExtResource("7_272bh")
@@ -293,6 +294,12 @@ position = Vector2(-16, 6)
 haystack = NodePath("../haystack")
 
 [node name="upgrade4" parent="." unique_id=2018599268 node_paths=PackedStringArray("haystack") instance=ExtResource("11_efxa6")]
-position = Vector2(-1, 6)
+position = Vector2(12, 6)
 type = 3
 haystack = NodePath("../haystack")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=599670625]
+stream = ExtResource("15_vivmo")
+volume_db = -8.0
+autoplay = true
+parameters/looping = true
