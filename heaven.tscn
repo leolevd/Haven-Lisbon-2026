@@ -24,10 +24,10 @@ size = Vector2(35, 62)
 [node name="heaven" type="Node2D" unique_id=2102242882]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1135566421]
-offset_left = -630.0
-offset_top = -483.0
-offset_right = 1466.0
-offset_bottom = 753.0
+offset_left = -628.0
+offset_top = -488.0
+offset_right = 1468.0
+offset_bottom = 748.0
 color = Color(0.6313726, 1, 1, 1)
 
 [node name="Layer0" type="TileMapLayer" parent="." unique_id=849584408]

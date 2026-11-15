@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dul0midlh8avd"]
+
+[ext_resource type="Script" uid="uid://dda37g3tf4mpy" path="res://texture_rect.gd" id="1_lbqom"]
+
+[node name="Final_Screen" type="Control" unique_id=391950176]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=582824559]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("1_lbqom")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1587197801]
+autoplay = true
+bus = &"Music"
