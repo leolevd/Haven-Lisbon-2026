@@ -18,12 +18,12 @@ func _physics_process(delta: float) -> void:
 		timer += delta
 	else:
 		timer = 0
-		hayleft -= clonesthere * strength / 2
+		hayleft -= clonesthere * strength
 		if randi_range(0, max(50 - (clonesthere*3*strength), 0)) == 0 and clonesthere >= 1:
 			player.money += 10
 			player.needles += 1
 	
-	var state = max((6 if hayleft <= 0 else ((hayleft / (2000/7)) - 6) * -1), 0)
+	var state := 6 if hayleft <= 0 else clampi(6 - hayleft / (2000 / 7), 0, 5)
 	$Sprite2D.frame = state
 	
 	if state == 2:
@@ -45,6 +45,7 @@ func _physics_process(delta: float) -> void:
 		var gne: Area2D = GOLDEN_NEEDLE.instantiate()
 		add_child(gne)
 		gne.position = Vector2(0, 20)
+		gne.z_index = 999
 
 func createclone():
 	clonesthere += 1

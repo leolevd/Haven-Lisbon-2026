@@ -7,7 +7,6 @@
 size = Vector2(10, 10)
 
 [node name="golden_needle" type="Area2D" unique_id=2133659959]
-visible = false
 script = ExtResource("1_xhlyd")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1004286504]
