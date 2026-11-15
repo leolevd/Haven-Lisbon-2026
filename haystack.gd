@@ -2,8 +2,7 @@ extends StaticBody2D
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
 const LILHELPER = preload("res://lilhelper.tscn")
 const GOLDEN_NEEDLE = preload("res://golden_needle.tscn")
-
-var hayleft = 500
+var hayleft = 2000
 var clonesthere = 0
 var timer = 0
 var minx = -16
@@ -24,7 +23,7 @@ func _physics_process(delta: float) -> void:
 			player.money += 10
 			player.needles += 1
 	
-	var state = max((6 if hayleft <= 0 else ((hayleft / (500/7)) - 6) * -1), 0)
+	var state = max((6 if hayleft <= 0 else ((hayleft / (2000/7)) - 6) * -1), 0)
 	$Sprite2D.frame = state
 	
 	if state == 2:

@@ -377,3 +377,8 @@ haystack = NodePath("../haystack")
 position = Vector2(7, 6)
 type = 3
 haystack = NodePath("../haystack")
+
+[node name="upgrade5" parent="." unique_id=1558496671 node_paths=PackedStringArray("haystack") instance=ExtResource("11_efxa6")]
+position = Vector2(-127, 6)
+type = 4
+haystack = NodePath("../haystack")
