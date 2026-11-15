@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://c6nup86c3ry1s"]
+
+[ext_resource type="Script" uid="uid://dbrrde4w6d8fs" path="res://imgs.gd" id="1_w41u7"]
+[ext_resource type="AudioStream" uid="uid://dmqa6g4fjfh1k" path="res://tuturial/drama.mp3" id="2_4ton6"]
+[ext_resource type="Texture2D" uid="uid://bl7iu157m6kc0" path="res://tuturial/background.png" id="3_4xm8k"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4xm8k"]
+texture = ExtResource("3_4xm8k")
+
+[node name="tuturial" type="Control" unique_id=1469705410]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=548821041]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_4xm8k")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1020813822]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w41u7")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2130300248]
+stream = ExtResource("2_4ton6")
+volume_db = 2.415
+autoplay = true
+bus = &"Music"

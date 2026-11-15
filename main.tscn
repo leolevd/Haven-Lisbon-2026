@@ -386,5 +386,6 @@ haystack = NodePath("../haystack")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1439618142]
 stream = ExtResource("15_vivmo")
-volume_db = -3.0
+volume_db = -2.241
 autoplay = true
+bus = &"Music"

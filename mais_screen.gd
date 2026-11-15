@@ -11,7 +11,7 @@ func _ready():
 func _on_start_pressed() -> void:
 	$AudioStreamPlayer.stream = load("res://click.mp3")
 	$AudioStreamPlayer.play()
-	get_tree().change_scene_to_file("res://main.tscn")
+	get_tree().change_scene_to_file("res://tuturial.tscn")
 	pass # Replace with function body.
 
 
