@@ -15,7 +15,7 @@ var r1
 var r2
 var r3
 func _physics_process(delta: float) -> void:
-	if timer < 0.1:
+	if timer < 2:
 		timer += delta
 	else:
 		timer = 0
