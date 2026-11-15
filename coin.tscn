@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bwe0e07ta6qnc" path="res://coin.gd" id="1_0t63x"]
 [ext_resource type="Texture2D" uid="uid://c8wnbv1seoiqr" path="res://haven-maneyyyy.png" id="2_0t63x"]
+[ext_resource type="AudioStream" uid="uid://bfjckyddbnc7o" path="res://CASH.mp3" id="3_v7riw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g8yvo"]
 radius = 4.0
@@ -20,5 +21,9 @@ shape = SubResource("CircleShape2D_g8yvo")
 
 [node name="Timer" type="Timer" parent="." unique_id=351483891]
 wait_time = 40.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1497364184]
+stream = ExtResource("3_v7riw")
+volume_db = -10.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

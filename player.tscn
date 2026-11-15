@@ -264,7 +264,7 @@ material = SubResource("ShaderMaterial_tsws6")
 position = Vector2(634, 67)
 scale = Vector2(5.9999995, 5.9999995)
 texture = ExtResource("6_1jxqw")
-hframes = 4
+hframes = 5
 frame = 1
 
 [node name="speed_boosts" type="Control" parent="CanvasLayer/HUD/Everything_else" unique_id=1980706541]
@@ -297,7 +297,7 @@ material = SubResource("ShaderMaterial_tsws6")
 position = Vector2(602, 70.99999)
 scale = Vector2(5.3125, 5.3125)
 texture = ExtResource("6_1jxqw")
-hframes = 4
+hframes = 5
 frame = 2
 
 [node name="strength_boosts" type="Control" parent="CanvasLayer/HUD/Everything_else" unique_id=1669621731]
@@ -330,5 +330,38 @@ material = SubResource("ShaderMaterial_tsws6")
 position = Vector2(698, 71)
 scale = Vector2(5.3125, 5.3125)
 texture = ExtResource("6_1jxqw")
-hframes = 4
+hframes = 5
 frame = 3
+
+[node name="hay_left" type="Control" parent="CanvasLayer/HUD/Everything_else" unique_id=1571347249]
+anchors_preset = 0
+offset_top = 360.0
+offset_right = 40.0
+offset_bottom = 400.0
+
+[node name="Label" type="Label" parent="CanvasLayer/HUD/Everything_else/hay_left" unique_id=660810523]
+layout_mode = 0
+offset_left = 757.0
+offset_top = 12.0
+offset_right = 1000.0
+offset_bottom = 135.0
+text = "HAY LEFT:"
+label_settings = SubResource("LabelSettings_onrkg")
+
+[node name="Label2" type="Label" parent="CanvasLayer/HUD/Everything_else/hay_left" unique_id=1730517934]
+layout_mode = 0
+offset_left = 970.0
+offset_top = 12.0
+offset_right = 1116.0
+offset_bottom = 191.0
+text = "0
+"
+label_settings = SubResource("LabelSettings_tsws6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/HUD/Everything_else/hay_left" unique_id=813650786]
+material = SubResource("ShaderMaterial_tsws6")
+position = Vector2(698, 71)
+scale = Vector2(5.3125, 5.3125)
+texture = ExtResource("6_1jxqw")
+hframes = 5
+frame = 4

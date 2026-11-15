@@ -1,3 +1,102 @@
-[gd_scene format=3 uid="uid://dfntt5b175jfk"]
+[gd_scene format=4 uid="uid://dfntt5b175jfk"]
+
+[ext_resource type="Texture2D" uid="uid://6pc1cx8o2h06" path="res://haven-bg6.png" id="1_rudbl"]
+[ext_resource type="Texture2D" uid="uid://cfxfdsyfs72kh" path="res://cloud.png" id="2_pyei6"]
+[ext_resource type="Script" uid="uid://belink5joks3w" path="res://heaven.gd" id="3_gv2gf"]
+[ext_resource type="Texture2D" uid="uid://c8q23bkd34y11" path="res://Heavens_gate.png" id="3_m101a"]
+[ext_resource type="PackedScene" uid="uid://dmi73yl7dw8uf" path="res://player.tscn" id="4_cmfn0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pyei6"]
+texture = ExtResource("1_rudbl")
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_tsws6"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_pyei6")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsws6"]
+size = Vector2(30, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmg3h"]
+size = Vector2(35, 62)
 
 [node name="heaven" type="Node2D" unique_id=2102242882]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1135566421]
+offset_left = -630.0
+offset_top = -483.0
+offset_right = 1466.0
+offset_bottom = 753.0
+color = Color(0.6313726, 1, 1, 1)
+
+[node name="Layer0" type="TileMapLayer" parent="." unique_id=849584408]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAD+////AAAEAAEAAAD+//7/AAAEAAEAAAD+//3/AAAEAAEAAAD+//z/AAAEAAEAAAD+/wAAAAAEAAEAAAD+/wEAAAAEAAEAAAD+//v/AAAEAAEAAAD+//r/AAAEAAEAAAD+//n/AAAEAAEAAAAIAAIAAAAEAAEAAAAIAAEAAAAEAAEAAAAIAAAAAAAEAAEAAAAIAP//AAAEAAEAAAAIAP7/AAAEAAEAAAAIAP3/AAAEAAEAAAAIAPz/AAAEAAEAAAAIAPv/AAAEAAEAAAAIAPr/AAAEAAEAAAA=")
+tile_set = SubResource("TileSet_tsws6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2104234678]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1260676381]
+texture = ExtResource("2_pyei6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1859157844]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_tsws6")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1119099527]
+position = Vector2(29, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=684671144]
+texture = ExtResource("2_pyei6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=445203473]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_tsws6")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1503932945]
+position = Vector2(59, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3" unique_id=1742910447]
+texture = ExtResource("2_pyei6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1413082542]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_tsws6")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=284180927]
+position = Vector2(89, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4" unique_id=1959855177]
+texture = ExtResource("2_pyei6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=1367436925]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_tsws6")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=117557540]
+position = Vector2(119, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D5" unique_id=296987011]
+texture = ExtResource("2_pyei6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=1625672570]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_tsws6")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=755155449]
+script = ExtResource("3_gv2gf")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1747917851]
+position = Vector2(96, -43)
+texture = ExtResource("3_m101a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1204753955]
+position = Vector2(112.5, -37)
+shape = SubResource("RectangleShape2D_wmg3h")
+
+[node name="player" parent="." unique_id=1069588700 instance=ExtResource("4_cmfn0")]
+position = Vector2(6, -20)
+heaven = true
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

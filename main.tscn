@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bx6b0gl20gro0" path="res://haystack.tscn" id="9_kek77"]
 [ext_resource type="Script" uid="uid://byyk3h0aayo2i" path="res://secret_entrance.gd" id="10_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://cciroq7ghg4ay" path="res://upgrade.tscn" id="11_efxa6"]
+[ext_resource type="Texture2D" uid="uid://cfxfdsyfs72kh" path="res://cloud.png" id="11_vivmo"]
 [ext_resource type="Script" uid="uid://2p0icfc5w8b0" path="res://secret.gd" id="13_w48qg"]
 [ext_resource type="AudioStream" uid="uid://cwtx563c1ht3n" path="res://music.mp3" id="15_vivmo"]
 
@@ -123,9 +124,12 @@ size = Vector2(36, 16.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1x3kl"]
 size = Vector2(37, 17)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2cqfq"]
+size = Vector2(31, 11)
+
 [node name="main" type="Node2D" unique_id=1024408130]
 
-[node name="player" parent="." unique_id=1069588700 node_paths=PackedStringArray("haystack") instance=ExtResource("5_lquwl")]
+[node name="player" parent="." unique_id=1069588700 node_paths=PackedStringArray("haystack") groups=["player"] instance=ExtResource("5_lquwl")]
 z_index = 100
 position = Vector2(-98, 0)
 haystack = NodePath("../haystack")
@@ -203,7 +207,7 @@ position = Vector2(-3, 120)
 
 [node name="Layer0" type="TileMapLayer" parent="tilemap" unique_id=317699142 groups=["Secret_entrace1"]]
 use_parent_material = true
-tile_map_data = PackedByteArray("AAD5/wIAAAABAAAAAAD6/wIAAAABAAAAAAD7/wIAAAABAAAAAAD8/wIAAAABAAAAAAD9/wIAAAABAAAAAAD+/wIAAAABAAAAAAD//wIAAAABAAAAAAAAAAIAAAABAAAAAAABAAIAAAABAAAAAAACAAIAAAABAAAAAAADAAIAAAABAAAAAAADAAMAAAABAAEAAAAEAAMAAAABAAEAAAACAAMAAAABAAEAAAABAAMAAAABAAEAAAAAAAMAAAABAAEAAAD//wMAAAABAAEAAAD+/wMAAAABAAEAAAD9/wMAAAABAAEAAAD8/wMAAAABAAEAAAD7/wMAAAABAAEAAAD6/wMAAAABAAEAAAD5/wMAAAABAAEAAAD6/wQAAAABAAEAAAD5/wQAAAABAAEAAAD7/wQAAAABAAEAAAD8/wQAAAABAAEAAAD9/wQAAAABAAEAAAD+/wQAAAABAAEAAAD//wQAAAABAAEAAAAAAAQAAAABAAEAAAABAAQAAAABAAEAAAACAAQAAAABAAEAAAADAAQAAAABAAEAAAAEAAQAAAABAAEAAAAEAAIAAAABAAAAAAD4/wIAAAABAAAAAAD4/wMAAAABAAEAAAD4/wQAAAABAAEAAAD3/wQAAAABAAEAAAD3/wMAAAABAAEAAAD3/wIAAAABAAAAAAAFAAIAAAABAAAAAAAGAAIAAAACAAAAAAAGAAMAAAACAAEAAAAFAAMAAAABAAEAAAAFAAQAAAABAAEAAAAGAAQAAAACAAEAAAD2/wIAAAABAAAAAAD1/wIAAAABAAAAAAD0/wIAAAABAAAAAADz/wIAAAABAAAAAADy/wIAAAABAAAAAADx/wIAAAABAAAAAADw/wIAAAABAAAAAADv/wIAAAABAAAAAADu/wIAAAABAAAAAADt/wIAAAABAAAAAADs/wIAAAABAAAAAADr/wIAAAABAAAAAADq/wIAAAAAAAAAAADq/wMAAAAAAAEAAADq/wQAAAAAAAEAAADr/wQAAAABAAEAAADr/wMAAAABAAEAAADs/wMAAAABAAEAAADs/wQAAAABAAEAAADt/wMAAAABAAEAAADu/wMAAAABAAEAAADt/wQAAAABAAEAAADu/wQAAAABAAEAAADv/wMAAAABAAEAAADv/wQAAAABAAEAAADw/wQAAAABAAEAAADx/wQAAAABAAEAAADy/wQAAAABAAEAAADz/wQAAAABAAEAAAD0/wQAAAABAAEAAAD1/wQAAAABAAEAAAD2/wQAAAABAAEAAAD2/wMAAAABAAEAAAD1/wMAAAABAAEAAAD0/wMAAAABAAEAAADz/wMAAAABAAEAAADy/wMAAAABAAEAAADx/wMAAAABAAEAAADw/wMAAAABAAEAAAAJAAEAAAAAAAMAAAAKAAEAAAABAAMAAAALAAEAAAABAAMAAAAMAAEAAAACAAMAAAAPAAEAAAAAAAMAAAAQAAEAAAACAAMAAAASAAAAAAAAAAMAAAATAAAAAAACAAMAAAAWAP//AAAAAAMAAAAXAP//AAACAAMAAAAbAAAAAAAAAAMAAAAcAAAAAAACAAMAAAAgAP//AAAAAAMAAAAhAP//AAACAAMAAAAkAP3/AAAAAAMAAAAlAP3/AAACAAMAAAAnAP//AAAAAAMAAAAoAP//AAABAAMAAAApAP//AAABAAMAAAAqAP//AAABAAMAAAArAP//AAAIAAMAAAAsAP//AAABAAMAAAAtAP//AAABAAMAAAAuAP//AAAIAAMAAAAvAP//AAACAAMAAAArAP7/AAADAAAAAAAuAP7/AAADAAEAAAAuAP3/AAADAAAAAAAxAPz/AAAAAAMAAAAyAPz/AAACAAMAAAA1APv/AAAAAAMAAAA2APv/AAACAAMAAAA6APr/AAAAAAMAAAA7APr/AAACAAMAAAA/APr/AAAAAAAAAAA/APz/AAAAAAIAAABAAPr/AAABAAAAAABAAPz/AAABAAIAAABBAPr/AAACAAAAAABBAPv/AAACAAEAAABBAPz/AAACAAIAAABAAPv/AAABAAEAAAA/APv/AAAAAAEAAAA=")
+tile_map_data = PackedByteArray("AAD5/wIAAAABAAAAAAD6/wIAAAABAAAAAAD7/wIAAAABAAAAAAD8/wIAAAABAAAAAAD9/wIAAAABAAAAAAD+/wIAAAABAAAAAAD//wIAAAABAAAAAAAAAAIAAAABAAAAAAABAAIAAAABAAAAAAACAAIAAAABAAAAAAADAAIAAAABAAAAAAADAAMAAAABAAEAAAAEAAMAAAABAAEAAAACAAMAAAABAAEAAAABAAMAAAABAAEAAAAAAAMAAAABAAEAAAD//wMAAAABAAEAAAD+/wMAAAABAAEAAAD9/wMAAAABAAEAAAD8/wMAAAABAAEAAAD7/wMAAAABAAEAAAD6/wMAAAABAAEAAAD5/wMAAAABAAEAAAD6/wQAAAABAAEAAAD5/wQAAAABAAEAAAD7/wQAAAABAAEAAAD8/wQAAAABAAEAAAD9/wQAAAABAAEAAAD+/wQAAAABAAEAAAD//wQAAAABAAEAAAAAAAQAAAABAAEAAAABAAQAAAABAAEAAAACAAQAAAABAAEAAAADAAQAAAABAAEAAAAEAAQAAAABAAEAAAAEAAIAAAABAAAAAAD4/wIAAAABAAAAAAD4/wMAAAABAAEAAAD4/wQAAAABAAEAAAD3/wQAAAABAAEAAAD3/wMAAAABAAEAAAD3/wIAAAABAAAAAAAFAAIAAAABAAAAAAAGAAIAAAACAAAAAAAGAAMAAAACAAEAAAAFAAMAAAABAAEAAAAFAAQAAAABAAEAAAAGAAQAAAACAAEAAAD2/wIAAAABAAAAAAD1/wIAAAABAAAAAAD0/wIAAAABAAAAAADz/wIAAAABAAAAAADy/wIAAAABAAAAAADx/wIAAAABAAAAAADw/wIAAAABAAAAAADv/wIAAAABAAAAAADu/wIAAAABAAAAAADt/wIAAAABAAAAAADs/wIAAAABAAAAAADr/wIAAAABAAAAAADq/wIAAAAAAAAAAADq/wMAAAAAAAEAAADq/wQAAAAAAAEAAADr/wQAAAABAAEAAADr/wMAAAABAAEAAADs/wMAAAABAAEAAADs/wQAAAABAAEAAADt/wMAAAABAAEAAADu/wMAAAABAAEAAADt/wQAAAABAAEAAADu/wQAAAABAAEAAADv/wMAAAABAAEAAADv/wQAAAABAAEAAADw/wQAAAABAAEAAADx/wQAAAABAAEAAADy/wQAAAABAAEAAADz/wQAAAABAAEAAAD0/wQAAAABAAEAAAD1/wQAAAABAAEAAAD2/wQAAAABAAEAAAD2/wMAAAABAAEAAAD1/wMAAAABAAEAAAD0/wMAAAABAAEAAADz/wMAAAABAAEAAADy/wMAAAABAAEAAADx/wMAAAABAAEAAADw/wMAAAABAAEAAAAJAAEAAAAAAAMAAAAKAAEAAAABAAMAAAALAAEAAAABAAMAAAAMAAEAAAACAAMAAAAPAAEAAAAAAAMAAAAQAAEAAAACAAMAAAASAAAAAAAAAAMAAAATAAAAAAACAAMAAAAWAP//AAAAAAMAAAAXAP//AAACAAMAAAAbAAAAAAAAAAMAAAAcAAAAAAACAAMAAAAgAP//AAAAAAMAAAAhAP//AAACAAMAAAAkAP3/AAAAAAMAAAAlAP3/AAACAAMAAAAnAP//AAAAAAMAAAAoAP//AAABAAMAAAApAP//AAABAAMAAAAqAP//AAABAAMAAAArAP//AAAIAAMAAAAsAP//AAABAAMAAAAtAP//AAABAAMAAAAuAP//AAAIAAMAAAAvAP//AAACAAMAAAArAP7/AAADAAAAAAAuAP7/AAADAAEAAAAuAP3/AAADAAAAAAAxAPz/AAAAAAMAAAAyAPz/AAACAAMAAAA1APv/AAAAAAMAAAA2APv/AAACAAMAAAA6APr/AAAAAAMAAAA7APr/AAACAAMAAAA/APr/AAAAAAAAAAA/APz/AAAAAAIAAABAAPr/AAABAAAAAABAAPz/AAABAAIAAABBAPr/AAACAAAAAABBAPv/AAACAAEAAABBAPz/AAACAAIAAABAAPv/AAABAAEAAAA/APv/AAAAAAEAAAAjAPn/AAADAAMAAAAgAPj/AAADAAMAAAAdAPf/AAADAAMAAAAYAPf/AAAAAAMAAAAZAPf/AAABAAMAAAAaAPf/AAACAAMAAAANAPf/AAABAAMAAAAMAPf/AAAAAAMAAAAOAPf/AAACAAMAAAA=")
 tile_set = SubResource("TileSet_7mycd")
 
 [node name="Node2D" type="Node2D" parent="tilemap/Layer0" unique_id=1262120605]
@@ -222,9 +226,20 @@ shape = SubResource("RectangleShape2D_ifeun")
 position = Vector2(1025.5, -72)
 shape = SubResource("RectangleShape2D_1x3kl")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="tilemap" unique_id=1233796112]
+position = Vector2(592, -104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tilemap/StaticBody2D" unique_id=1330347596]
+position = Vector2(-0.5, 6.5)
+shape = SubResource("RectangleShape2D_2cqfq")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="tilemap/StaticBody2D" unique_id=2063921499]
+position = Vector2(-1, 6)
+texture = ExtResource("11_vivmo")
+
 [node name="haystack" parent="." unique_id=464760062 instance=ExtResource("9_kek77")]
 position = Vector2(-272, -32)
-player = NodePath("../player")
 
 [node name="maney" type="Node" parent="." unique_id=1224474967]
 
@@ -281,6 +296,72 @@ z_index = -1
 position = Vector2(1032, -72)
 script = ExtResource("13_w48qg")
 
+[node name="coin" parent="maney" unique_id=1517808145 instance=ExtResource("9_4c57u")]
+position = Vector2(197, -149)
+
+[node name="coin2" parent="maney" unique_id=1724523395 instance=ExtResource("9_4c57u")]
+position = Vector2(206, -148)
+
+[node name="coin3" parent="maney" unique_id=1883280550 instance=ExtResource("9_4c57u")]
+position = Vector2(202, -156)
+
+[node name="coin20" parent="maney" unique_id=1611187170 instance=ExtResource("9_4c57u")]
+position = Vector2(207, -154)
+
+[node name="coin21" parent="maney" unique_id=562263829 instance=ExtResource("9_4c57u")]
+position = Vector2(211, -149)
+
+[node name="coin22" parent="maney" unique_id=1057567969 instance=ExtResource("9_4c57u")]
+position = Vector2(220, -149)
+
+[node name="coin23" parent="maney" unique_id=300739237 instance=ExtResource("9_4c57u")]
+position = Vector2(217, -153)
+
+[node name="coin24" parent="maney" unique_id=562426338 instance=ExtResource("9_4c57u")]
+position = Vector2(211, -162)
+
+[node name="coin25" parent="maney" unique_id=585557605 instance=ExtResource("9_4c57u")]
+position = Vector2(216, -161)
+
+[node name="coin26" parent="maney" unique_id=373893036 instance=ExtResource("9_4c57u")]
+position = Vector2(212, -154)
+
+[node name="coin27" parent="maney" unique_id=685062207 instance=ExtResource("9_4c57u")]
+position = Vector2(205, -162)
+
+[node name="coin28" parent="maney" unique_id=1169229986 instance=ExtResource("9_4c57u")]
+position = Vector2(216, -146)
+
+[node name="coin29" parent="maney" unique_id=742954567 instance=ExtResource("9_4c57u")]
+position = Vector2(224, -144)
+
+[node name="coin30" parent="maney" unique_id=892752584 instance=ExtResource("9_4c57u")]
+position = Vector2(229, -147)
+
+[node name="coin31" parent="maney" unique_id=1673792836 instance=ExtResource("9_4c57u")]
+position = Vector2(225, -155)
+
+[node name="coin32" parent="maney" unique_id=1761149822 instance=ExtResource("9_4c57u")]
+position = Vector2(220, -158)
+
+[node name="coin33" parent="maney" unique_id=2078201041 instance=ExtResource("9_4c57u")]
+position = Vector2(202, -148)
+
+[node name="coin34" parent="maney" unique_id=284591101 instance=ExtResource("9_4c57u")]
+position = Vector2(203, -153)
+
+[node name="coin35" parent="maney" unique_id=41805649 instance=ExtResource("9_4c57u")]
+position = Vector2(208, -158)
+
+[node name="coin36" parent="maney" unique_id=283625719 instance=ExtResource("9_4c57u")]
+position = Vector2(211, -146)
+
+[node name="coin37" parent="maney" unique_id=1213386035 instance=ExtResource("9_4c57u")]
+position = Vector2(226, -151)
+
+[node name="coin38" parent="maney" unique_id=1228827368 instance=ExtResource("9_4c57u")]
+position = Vector2(220, -145)
+
 [node name="upgrade" parent="." unique_id=364805235 instance=ExtResource("11_efxa6")]
 position = Vector2(-74, 6)
 type = 2
@@ -294,12 +375,11 @@ position = Vector2(-16, 6)
 haystack = NodePath("../haystack")
 
 [node name="upgrade4" parent="." unique_id=2018599268 node_paths=PackedStringArray("haystack") instance=ExtResource("11_efxa6")]
-position = Vector2(12, 6)
+position = Vector2(7, 6)
 type = 3
 haystack = NodePath("../haystack")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=599670625]
-stream = ExtResource("15_vivmo")
-volume_db = -8.0
-autoplay = true
-parameters/looping = true
+[node name="upgrade5" parent="." unique_id=1558496671 node_paths=PackedStringArray("haystack") instance=ExtResource("11_efxa6")]
+position = Vector2(-127, 6)
+type = 4
+haystack = NodePath("../haystack")

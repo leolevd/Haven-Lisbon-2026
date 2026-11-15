@@ -67,7 +67,7 @@ shape = SubResource("RectangleShape2D_wmg3h")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=760493902]
 texture = ExtResource("3_hj5gr")
-hframes = 4
+hframes = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1881132333]
 position = Vector2(0, -6.5)

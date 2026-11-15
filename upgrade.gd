@@ -1,5 +1,5 @@
 extends StaticBody2D
-@export_enum("Clones", "Jump", "Speed", "Strength") var type = 0
+@export_enum("Clones", "Jump", "Speed", "Strength", "Instant_hay") var type = 0
 @export var haystack: Node2D = null
 var cost_speed = 5
 var cost_jump = 5
@@ -16,6 +16,8 @@ func _ready() -> void:
 			num.frame = 0
 		3:
 			num.frame = 7
+		4:
+			num.frame = 8
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -73,4 +75,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 								num.frame = 8
 							25:
 								num.frame = 9
-			
+			4:
+				if body.money >= 20 and haystack:
+					haystack.hayleft -= 100
+					body.money -= 20
+					
