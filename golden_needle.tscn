@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ttm3rkrcfhmr"]
+
+[ext_resource type="Texture2D" uid="uid://b0p8or38g1utu" path="res://haven-needle-gold.png" id="1_423aa"]
+[ext_resource type="Script" uid="uid://dx5uefmog4i77" path="res://golden_needle.gd" id="1_xhlyd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsws6"]
+size = Vector2(10, 10)
+
+[node name="golden_needle" type="Area2D" unique_id=2133659959]
+script = ExtResource("1_xhlyd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1004286504]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_423aa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1218965095]
+shape = SubResource("RectangleShape2D_tsws6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

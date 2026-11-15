@@ -13,6 +13,7 @@ func reactivate():
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "player":
+		$AudioStreamPlayer.play()
 		body.money += 1
 		sprite.visible = false
 		collision.set_deferred("disabled", true)

@@ -124,7 +124,7 @@ size = Vector2(37, 17)
 
 [node name="main" type="Node2D" unique_id=1024408130]
 
-[node name="player" parent="." unique_id=1069588700 node_paths=PackedStringArray("haystack") instance=ExtResource("5_lquwl")]
+[node name="player" parent="." unique_id=1069588700 node_paths=PackedStringArray("haystack") groups=["player"] instance=ExtResource("5_lquwl")]
 z_index = 100
 position = Vector2(-98, 0)
 haystack = NodePath("../haystack")
@@ -223,7 +223,6 @@ shape = SubResource("RectangleShape2D_1x3kl")
 
 [node name="haystack" parent="." unique_id=464760062 instance=ExtResource("9_kek77")]
 position = Vector2(-272, -32)
-player = NodePath("../player")
 
 [node name="maney" type="Node" parent="." unique_id=1224474967]
 
@@ -293,6 +292,6 @@ position = Vector2(-16, 6)
 haystack = NodePath("../haystack")
 
 [node name="upgrade4" parent="." unique_id=2018599268 node_paths=PackedStringArray("haystack") instance=ExtResource("11_efxa6")]
-position = Vector2(-1, 6)
+position = Vector2(7, 6)
 type = 3
 haystack = NodePath("../haystack")

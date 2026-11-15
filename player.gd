@@ -10,6 +10,7 @@ extends CharacterBody2D
 @export var DASH_RELOAD = 0.6
 @export var DASH_SPEED = 600.0
 @export var haystack: Node2D
+@export var heaven: bool = false
 var jump_boosts = 0
 var speed_boosts = 0
 var dash_timer = 0.0
@@ -29,16 +30,17 @@ func wobble():
 func unwobble():
 	animated_sprite_2d.material = null
 func _physics_process(delta: float) -> void:
-	label_2.text = str(money)
-	if Input.is_action_pressed("showstats"):
-		everything_else.visible = true
-	else:
-		everything_else.visible = false
-	$CanvasLayer/HUD/Everything_else/workers/Label2.text = str(haystack.clonesthere)
-	$CanvasLayer/HUD/Everything_else/jump_boosts/Label2.text = str(jump_boosts)
-	$CanvasLayer/HUD/Everything_else/speed_boosts/Label2.text = str(speed_boosts)
-	$CanvasLayer/HUD/Everything_else/needles/Label2.text = str(needles)
-	$CanvasLayer/HUD/Everything_else/strength_boosts/Label2.text = str(haystack.strength)
+	if not heaven:
+		label_2.text = str(money)
+		if Input.is_action_pressed("showstats"):
+			everything_else.visible = true
+		else:
+			everything_else.visible = false
+		$CanvasLayer/HUD/Everything_else/workers/Label2.text = str(haystack.clonesthere)
+		$CanvasLayer/HUD/Everything_else/jump_boosts/Label2.text = str(jump_boosts)
+		$CanvasLayer/HUD/Everything_else/speed_boosts/Label2.text = str(speed_boosts)
+		$CanvasLayer/HUD/Everything_else/needles/Label2.text = str(needles)
+		$CanvasLayer/HUD/Everything_else/strength_boosts/Label2.text = str(haystack.strength)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += Vector2(0, GRAVITY) * delta
