@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://vwjukkmqjj0m"]
+
+[ext_resource type="Texture2D" uid="uid://cydsk0neq2b7o" path="res://the_end.png" id="1_n735c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tsws6"]
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wmg3h"]
+font_size = 64
+font_color = Color(1, 0, 0, 1)
+
+[node name="end" type="Control" unique_id=531722193]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1389133597]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.69411767, 1, 1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=218072973]
+position = Vector2(578.00006, 289)
+scale = Vector2(18.125002, 18.125002)
+texture = ExtResource("1_n735c")
+
+[node name="Label" type="Label" parent="." unique_id=157395287]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 587.0
+offset_right = 157.0
+offset_bottom = 642.0
+text = "Yuppie!   Yuppie!   Yuppie!   Yuppie!   Yuppie!   Yuppie!   Yupp"
+label_settings = SubResource("LabelSettings_tsws6")
+
+[node name="Label2" type="Label" parent="." unique_id=405008293]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 496.0
+offset_right = 482.0
+offset_bottom = 584.0
+text = "Breaking news:"
+label_settings = SubResource("LabelSettings_wmg3h")
